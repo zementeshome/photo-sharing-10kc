@@ -21,22 +21,23 @@ const userSchema = new mongoose.Schema({
     saltSecret: String
 });
 
-// const User = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
+
+// email validation
 
 userSchema.path('email').validate((val) => {
     emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return emailRegex.test(val);
 }, 'invalid email')
 
-// figure out username validation
+// username validation
 
-// userSchema.path('username').validate(function(val, res) {
-//     User.findOne({name: val}, 'id', function(err, user) {
-//         if (err) return res(err);
-//         if (user) return res(false);
-//         res(true);
-//     });
-//   }, "username already exists");
+userSchema.path('username').validate(function(val, res) {
+    User.findOne({name: val}, 'id', function(err, user) {
+        if(user)
+        console.log('user exits')
+    });
+  }, "username already exists");
 
 userSchema.pre('save', (next) => {
     bcrypt.genSalt(saltRounds, (err, salt) => {
