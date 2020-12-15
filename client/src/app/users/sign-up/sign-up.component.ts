@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/user.service';
 import { NgForm } from '@angular/forms';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -33,6 +34,12 @@ export class SignUpComponent implements OnInit {
       }
     );
   }
+
+  // onClick() {
+  //   if (form.valid === true) {
+  //     this.router.navigate(['/home'])
+  //   }
+  // }
 
   resetForm(form:NgForm) {
     this.userService.selectedUser = {
