@@ -12,6 +12,7 @@ import { SignUpComponent } from './users/sign-up/sign-up.component';
 // import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
 // import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     // HomeComponent,
     LogoutComponent,
     LoginComponent,
+    HeaderComponent,
     // ProfileComponent
   ],
   imports: [
