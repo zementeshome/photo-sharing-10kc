@@ -9,12 +9,18 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { SignUpComponent } from './users/sign-up/sign-up.component';
 import { appRoutes } from './routes';
+import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent,
+    LogoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

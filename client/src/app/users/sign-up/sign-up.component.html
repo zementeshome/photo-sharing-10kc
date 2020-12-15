@@ -16,8 +16,10 @@
     <button type="submit" value="Sign Up">sign up</button>
 </form>
 <div class="form__success" *ngIf="showSuccessMessage">
-    saved succsessfully
+    account created
 </div>
-
-
-<!-- taken username and email message not displaying on front end-->
+<div class="form__error" *ngIf="serverErrorMessage">
+    {{serverErrorMessage}}
+</div>
+<!-- <login-component></login-component> -->
+<router-outlet></router-outlet>
