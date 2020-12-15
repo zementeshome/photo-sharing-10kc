@@ -1,0 +1,67 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/fonts';
+
+.home {
+
+    &__container {
+        @include mobile {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        @include desktop {
+            width: 60%;
+            margin: auto;
+        }
+    }
+
+    &__image-container {
+        @include mobile {
+            padding-right: 2vw;
+            padding-top: 1rem;
+        }
+    }
+
+    &__image {
+        @include mobile {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__username {
+        @include mobile {
+            font-family: 'Aileron Thin';
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        @include desktop {
+            font-size: 13px;
+        }
+
+    }
+
+    &__image-border {
+        @include mobile {
+            width: 50px;
+            border-radius: 50%;
+            border: solid 1px;
+            animation: rainbow 5s linear infinite;
+            // border: 2px solid linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+        }
+    }
+
+    @keyframes rainbow {
+        0% { border-color: #b827fc}
+        25% { border-color: #2c90fc}
+        50% { border-color: #b8fd33}
+        75% { border-color: #fec837}
+        100% { border-color: #fd1892}
+    }
+
+}

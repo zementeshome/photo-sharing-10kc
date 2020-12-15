@@ -13,6 +13,8 @@ import { SignUpComponent } from './users/sign-up/sign-up.component';
 import { LogoutComponent } from './logout/logout.component';
 import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HomeGalleryComponent } from './home-gallery/home-gallery.component';
 // import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -25,12 +27,14 @@ import { HeaderComponent } from './header/header.component';
     LogoutComponent,
     LoginComponent,
     HeaderComponent,
+    HomeGalleryComponent,
     // ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    FontAwesomeModule,
     // RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],
