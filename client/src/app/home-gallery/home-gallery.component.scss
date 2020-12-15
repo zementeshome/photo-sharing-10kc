@@ -1,0 +1,56 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/fonts';
+
+.gallery {
+    font-family: 'Aileron Thin';
+    font-size: 15px;
+
+    &__image-container {
+        @include mobile {
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+
+    &__image {
+        @include mobile {
+            width: 100%;
+        }
+    }
+
+    &__user-container {
+        @include mobile {
+            padding-left: 3vw;
+            display: flex;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    &__image-border {
+        @include mobile {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    }
+
+    &__user-image {
+        @include mobile {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            margin-top: 0.8rem;
+        }
+    }
+
+    &__username {
+        @include mobile {
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+        }
+    }
+}
