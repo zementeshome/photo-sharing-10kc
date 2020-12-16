@@ -14,12 +14,14 @@ html, body {
 
     &__logo {
         @include mobile {
-            width: 30%;
+            font-family: 'Aileron Black';
+            font-size: 25px;
+            margin-top: 0.6rem;
             margin-left: 3vw;
             outline: none;
         }
-        @include desktop {
-            width: 20%;
+        @include tablet {
+            font-size: 30px;
         }
     }
 
@@ -40,9 +42,6 @@ html, body {
         @include mobile {
             list-style-type: none;
         }
-        @include tablet {
-            margin-top: 1rem;
-        }
     }
 
     &__nav-list-item:hover {
@@ -57,7 +56,7 @@ html, body {
             padding-right: 10px;
         }
         @include tablet {
-            font-size: 20px;
+            font-size: 16px;
         }
     }
 }

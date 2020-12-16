@@ -1,0 +1,19 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/fonts';
+
+.user {
+    // .wrapper {
+    //     @include mobile {
+    //         display: flex;
+    //         justify-content: center;
+    //         margin: auto;
+    //     }
+    // }
+    &__header {
+        @include mobile {
+            font-family: 'Aileron Black';
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

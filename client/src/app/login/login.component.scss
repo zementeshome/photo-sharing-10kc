@@ -1,0 +1,45 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/fonts';
+
+.login {
+
+    &__container {
+        @include mobile {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+    }
+    &__username,
+    &__password {
+        @include mobile {
+            width: 60%;
+            margin-bottom: 0.5rem;
+            height: 25px;
+            border-radius: 5px;
+            border: 2px solid black;
+            outline: none;
+            font-family: 'Aileron Regular';
+        }
+    }
+
+    ::placeholder {
+        font-family: 'Aileron Thin';
+        padding-left: 2vw;
+    }
+
+    &__button {
+        @include mobile {
+            width: 30%;
+            height: 28px;
+            font-family: 'Aileron Regular';
+            border: 1px solid black;
+            outline: none;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+        }
+    }
+
+ }

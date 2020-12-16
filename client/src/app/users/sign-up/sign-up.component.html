@@ -13,7 +13,7 @@
         <label class="form__invalid-text" *ngIf="password.errors.required">this field is required</label>
         <label class="form__invalid-text" *ngIf="password.errors.minlength">password must be atleast 6 characters long</label>
     </div>
-    <button type="submit" value="Sign Up">sign up</button>
+    <button class="form__button" type="submit" value="Sign Up">sign up</button>
 </form>
 <div class="form__success" *ngIf="showSuccessMessage">
     account created
@@ -21,5 +21,6 @@
 <div class="form__error" *ngIf="serverErrorMessage">
     {{serverErrorMessage}}
 </div>
+ <!-- TODO:don't think  i need these messages-->
 <app-login></app-login>
 <router-outlet></router-outlet>
