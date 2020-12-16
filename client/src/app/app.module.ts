@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -35,6 +35,7 @@ import { HomeGalleryComponent } from './home-gallery/home-gallery.component';
     FormsModule,
     AppRoutingModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
     // RouterModule.forRoot(appRoutes),
     HttpClientModule
   ],

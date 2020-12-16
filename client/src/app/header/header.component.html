@@ -5,7 +5,8 @@
         <ul class="header__nav-list">
             <li class="header__nav-list-item"><a class="header__nav-link" routerLink="/home" routerLinkActive="active">home</a></li>
             <li class="header__nav-list-item"><a class="header__nav-link" routerLink="/profile" routerLinkActive="active">profile</a></li>
-            <li class="header__nav-list-item"><a class="header__nav-link" routerLink="/" routerLinkActive="active">logout</a></li>
+            <li class="header__nav-list-item"><button class="header__nav-link" (click)="logout()" *ngIf="this.userService.isLoggedIn()">logout</button></li>
+            <!-- <li class="header__nav-list-item"><a class="header__nav-link" routerLink="/" routerLinkActive="active">logout</a></li> -->
         </ul>
     </nav>
 </div>
