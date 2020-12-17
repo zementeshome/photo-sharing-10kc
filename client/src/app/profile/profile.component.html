@@ -25,4 +25,15 @@
         <p class="profile__bio">welcome to my page</p>
     </div>
     </div>
+    <button class="profile__open-button" 
+    (click)="openForm()">upload a photo</button>
+    <div class="profile__form-wrapper"></div>
+    <form action="" class="profile__form" method="post" id="profileForm">
+        <label class="profile__form-label">upload a photo</label>
+        <input type="file" class="profile__form-input" name="photos">
+        <label class="profile__form-label">caption:</label>
+        <input type="text" class="profile__form-input">
+        <button type="submit" class="profile__form-button">upload</button>
+        <button type="submit" class="profile__form-button" (click)="closeForm()">close</button>
+    </form>
 </section>

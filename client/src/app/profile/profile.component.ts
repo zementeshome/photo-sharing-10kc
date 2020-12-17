@@ -13,4 +13,12 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openForm() {
+    document.getElementById('profileForm').style.display = 'block'
+  }
+
+  closeForm() {
+    document.getElementById('profileForm').style.display = 'none'
+  }
+
 }
