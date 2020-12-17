@@ -16,12 +16,29 @@ export class UserService {
     password: ''
   };
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  currentUser = {};
+  currentUser: User;
 
   constructor(public http: HttpClient, public router: Router) { }
 
   postUser(user: User) {
     return this.http.post(environment.apiUrl + '/register',user);
+  }
+
+  login(username: string, password: string) {
+    return this.http.post(environment.apiUrl + '/login', {
+      username, password
+    })
+  }
+
+  setCurrentUser(user: User) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
+
+  getCurrentUser = (): User => JSON.parse(localStorage.getItem('user'))
+  
+  logout() {
+    this.currentUser = null 
+    this.router.navigate(['/']);
   }
 }
   // getAccessToken() {

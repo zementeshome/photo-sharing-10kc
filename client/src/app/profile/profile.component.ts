@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faSmile } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from '../shared/user.service';
+import { User } from '../shared/user.model';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +10,12 @@ import { faSmile } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProfileComponent implements OnInit {
   faSmile = faSmile
-  constructor() { }
+  user: User;
+  constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.user = this.userService.getCurrentUser()
+    console.log(this.user)
   }
 
   openForm() {

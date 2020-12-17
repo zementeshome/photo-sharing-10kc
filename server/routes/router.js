@@ -7,8 +7,7 @@ const fs = require('fs');
 const user = require('../users.controller');
 
 router.post('/register', user.register);
-router.post('login', user.register);
-router.get('/profile/id', user.register)
+router.post('/login', user.login);
 router.post('/uploads', user.register)
 router.post('/api/photo',function(req,res){
     var newItem = new Item();

@@ -6,7 +6,8 @@
             <div class="profile__user-border">
                 <p class="profile__image"><fa-icon [icon]="faSmile"></fa-icon></p>
         </div>
-            <p class="profile__username">zzzemen</p>
+            <p class="profile__username">{{user.username}}</p>
+            <!-- <p class="profile__username">zzzemen</p> -->
         </div>
         <div class="profile__info">
             <div class="profile__posts">
@@ -36,4 +37,11 @@
         <button type="submit" class="profile__form-button">upload</button>
         <button type="submit" class="profile__form-button" (click)="closeForm()">close</button>
     </form>
+    <div class="profile__gallery-container">
+        <div class="profile__gallery-image-container">
+            <img class="profile__gallery-image" src="../../assets/images/gallery-2.jpg" alt="art">
+            <p class="profile__gallery-caption">colourful image</p>
+            <button class="profile__gallery-delete">delete</button>
+        </div>
+    </div>
 </section>

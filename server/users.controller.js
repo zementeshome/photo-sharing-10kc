@@ -19,3 +19,19 @@ module.exports.register = (req, res, next) => {
         }
     });
 }
+
+module.exports.login = async(req, res, next) => {
+    const query = 
+    User.findOne({
+        'username': req.body.username,
+        'password': req.body.password
+    })
+    // query.select('email')
+    let result = await query.exec()
+    if (result) {
+        res.json(result)
+    } else {
+        res.status(422).send("this user doesn't exist")
+    }
+}
+
