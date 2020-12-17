@@ -18,6 +18,13 @@ const userSchema = new mongoose.Schema({
         req: "password can't be empty",
         minlength: [6, "password must be atleast 6 characters long"]
     },
+    photos: {
+        data: Buffer,
+        type: Array
+    }, 
+    caption: {
+        type: String
+    },
     saltSecret: String
 });
 
