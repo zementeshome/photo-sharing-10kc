@@ -1,0 +1,59 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/fonts';
+
+.profile {
+    font-family: 'Aileron Thin';
+    cursor: pointer;
+
+    &__user-container {
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    &__user-border {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-top: 1rem;
+        margin-left: 3vw;
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image-container {
+        display: flex;
+    }
+
+    &__username {
+        @include mobile {
+            margin-left: 1rem;
+        }
+    }
+
+    &__info {
+        display: flex;
+        margin-left: 3.5rem;
+        margin-top: -2rem;
+    }
+
+    &__posts-number {
+        font-family: 'Aileron Bold';
+    }
+
+    &__posts {
+        padding-left: 3vw;
+    }
+
+    &__posts-number {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__bio {
+        margin-left: 3vw;
+    }
+}

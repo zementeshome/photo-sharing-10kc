@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginUser() {
-    if (this.userService.login(this.loginForm.value)) {
-      this.router.navigate(['/home'])
-    }
+  // loginUser() {
+  //   if (this.userService.login(this.loginForm.value)) {
+  //     this.router.navigate(['/home'])
+  //   }
   }
 
   // loginUser(e) {
@@ -41,4 +41,4 @@ export class LoginComponent implements OnInit {
   // }
 
     // constructor(public Auth: AuthService) { }
-}
+
