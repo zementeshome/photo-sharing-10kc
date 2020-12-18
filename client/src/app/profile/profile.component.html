@@ -6,7 +6,7 @@
             <div class="profile__user-border">
                 <p class="profile__image"><fa-icon [icon]="faSmile"></fa-icon></p>
         </div>
-            <p class="profile__username">{{user.username}}</p>
+            <p class="profile__username">{{ user.username }}</p>
             <!-- <p class="profile__username">zzzemen</p> -->
         </div>
         <div class="profile__info">
@@ -24,19 +24,26 @@
             </div>
         </div>
         <p class="profile__bio">welcome to my page</p>
+        <div class="profile__open-button-container">
+            <button class="profile__open-button" 
+            (click)="openForm()">upload a photo</button>
+        </div>
     </div>
     </div>
-    <button class="profile__open-button" 
-    (click)="openForm()">upload a photo</button>
+    <div class="profile__form-container">
     <div class="profile__form-wrapper"></div>
-    <form action="" class="profile__form" method="post" id="profileForm">
+    <form action="" class="profile__form" method="post" id="profileForm" enctype="multipart/form-data" role="form">
+        <div class="profile__button-container">
         <label class="profile__form-label">upload a photo</label>
-        <input type="file" class="profile__form-input" name="photos">
+        <button type="submit" class="profile__form-exit-button" (click)="closeForm()">x</button>
+    </div>
+        <input type="file" class="profile__form-input" name="file" id="file">
         <label class="profile__form-label">caption:</label>
-        <input type="text" class="profile__form-input">
+        <input type="text" class="profile__form-input" name="caption" id="caption">
         <button type="submit" class="profile__form-button">upload</button>
-        <button type="submit" class="profile__form-button" (click)="closeForm()">close</button>
+        <!-- <button type="submit" class="profile__form-button" (click)="closeForm()">close</button> -->
     </form>
+</div>
     <div class="profile__gallery-container">
         <div class="profile__gallery-image-container">
             <img class="profile__gallery-image" src="../../assets/images/gallery-2.jpg" alt="art">

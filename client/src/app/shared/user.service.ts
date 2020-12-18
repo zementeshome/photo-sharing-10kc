@@ -18,10 +18,11 @@ export class UserService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: User;
 
-  constructor(public http: HttpClient, public router: Router) { }
+  constructor(public http: HttpClient, public router: Router) {
+   }
 
   postUser(user: User) {
-    return this.http.post(environment.apiUrl + '/register',user);
+    return this.http.post(environment.apiUrl + '/register', user);
   }
 
   login(username: string, password: string) {
@@ -87,4 +88,4 @@ export class UserService {
 //   }
 //   return throwError(msg);
 // }
-// 
+

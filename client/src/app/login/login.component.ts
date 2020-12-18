@@ -24,7 +24,7 @@ password: string = '';
   // })
  }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   loginUser(e) {
