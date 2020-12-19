@@ -13,8 +13,8 @@ import { User } from '../shared/user.model';
   providers: [UserService]
 })
 export class LoginComponent implements OnInit {
-username: string = '';
-password: string = '';
+username: string
+password: string
 
 
  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router) {

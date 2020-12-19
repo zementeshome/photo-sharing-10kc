@@ -36,22 +36,22 @@ userSchema.path('email').validate((val) => {
 
 // username validation
 
-userSchema.path('username').validate(function(val, res) {
-    User.findOne({name: val}, 'id', function(err, user) {
-        if(user)
-        console.log('user exits')
-    });
-  }, "username already exists");
+// userSchema.path('username').validate(function(val, res) {
+//     User.findOne({name: val}, 'id', function(err, user) {
+//         if(user)
+//         console.log('user exits')
+//     });
+//   }, "username already exists");
 
-userSchema.pre('save', (next) => {
-    bcrypt.genSalt(saltRounds, (err, salt) => {
-        bcrypt.hash(this.password, salt, (err, hash) =>{
-            this.password = hash;
-            this.saltSecret = salt; // not displaying 
-            next();
-        });
-    });
-});
+// userSchema.pre('save', (next) => {
+//     bcrypt.genSalt(saltRounds, (err, salt) => {
+//         bcrypt.hash(this.password, salt, (err, hash) =>{
+//             this.password = hash;
+//             this.saltSecret = salt; // not displaying 
+//             next();
+//         });
+//     });
+// });
 
 module.exports = mongoose.model('User', userSchema)
 // module.exports = mongoose.model('Photo', photoSchema)
