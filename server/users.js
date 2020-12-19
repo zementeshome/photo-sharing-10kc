@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const saltRounds = 10;
+// const saltRounds = 10;
+// const multer  = require('multer');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -18,17 +19,13 @@ const userSchema = new mongoose.Schema({
         req: "password can't be empty",
         minlength: [6, "password must be atleast 6 characters long"]
     },
-    photos: {
+    photo: {
+        caption: String,
         data: Buffer,
-        type: Array
-    }, 
-    caption: {
-        type: String
+        contentType: String
     },
     saltSecret: String
 });
-
-const User = mongoose.model('User', userSchema)
 
 // email validation
 
@@ -57,3 +54,4 @@ userSchema.pre('save', (next) => {
 });
 
 module.exports = mongoose.model('User', userSchema)
+// module.exports = mongoose.model('Photo', photoSchema)
