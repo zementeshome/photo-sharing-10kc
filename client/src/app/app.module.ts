@@ -15,6 +15,9 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeGalleryComponent } from './home-gallery/home-gallery.component';
+import { PhotosComponent } from './profile/photos/photos.component';
+import { ProfileGalleryComponent } from './profile/photos/profile-gallery/profile-gallery.component';
+// import {PhotoService} from './shared/photo.service';
 // import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
@@ -28,6 +31,8 @@ import { HomeGalleryComponent } from './home-gallery/home-gallery.component';
     LoginComponent,
     HeaderComponent,
     HomeGalleryComponent,
+    PhotosComponent,
+    ProfileGalleryComponent,
     // ProfileComponent
   ],
   imports: [

@@ -32,23 +32,23 @@
     </div>
     <div class="profile__form-container">
     <div class="profile__form-wrapper"></div>
-    <form action="" class="profile__form" method="post" id="profileForm" enctype="multipart/form-data" role="form">
+    <form action="" class="profile__form" method="post" id="profileForm" enctype="multipart/form-data" role="form" (ngSubmit)="onSubmit()">
         <div class="profile__button-container">
         <label class="profile__form-label">upload a photo</label>
         <button type="submit" class="profile__form-exit-button" (click)="closeForm()">x</button>
     </div>
-        <input type="file" class="profile__form-input" name="file" id="file">
+        <input type="file" class="profile__form-input" name="photo" id="photo" required accept="image/*" [ngModel] = "" (change)="handleSubmit($event.target)">
         <label class="profile__form-label">caption:</label>
-        <input type="text" class="profile__form-input" name="caption" id="caption">
+        <input type="text" class="profile__form-input" name="caption" id="caption" #caption="ngModel" required [(ngModel)]="photo.caption">
         <button type="submit" class="profile__form-button">upload</button>
         <!-- <button type="submit" class="profile__form-button" (click)="closeForm()">close</button> -->
     </form>
 </div>
     <div class="profile__gallery-container">
         <div class="profile__gallery-image-container">
-            <img class="profile__gallery-image" src="../../assets/images/gallery-2.jpg" alt="art">
-            <p class="profile__gallery-caption">colourful image</p>
-            <button class="profile__gallery-delete">delete</button>
+            <img class="profile__gallery-image" src="{{photo.photo}}" alt="art">
+            <p class="profile__gallery-caption">{{photo.caption}}</p>
+            <button class="profile__gallery-delete" (click)="delete(photo)">delete</button>
         </div>
     </div>
 </section>

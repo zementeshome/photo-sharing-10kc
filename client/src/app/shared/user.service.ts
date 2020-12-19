@@ -41,6 +41,10 @@ export class UserService {
     this.currentUser = null 
     this.router.navigate(['/']);
   }
+
+  // updateProfile(id, data) {
+  //   return this.http.get(`${this.environment.apiUrl}`)
+  // }
 }
   // getAccessToken() {
   //   return localStorage.getItem('access_token');
