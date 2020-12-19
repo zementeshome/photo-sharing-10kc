@@ -15,6 +15,7 @@ import { User } from '../shared/user.model';
 export class LoginComponent implements OnInit {
 username: string
 password: string
+showErrorMessage: boolean;
 
 
  constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router) {
@@ -33,8 +34,14 @@ password: string
       if (user) {
        this.userService.setCurrentUser(user)
         this.router.navigate(['/home'])
+      } else {
+        console.log('no user')
       }
-    })
+    },
+    (error) => {
+      this.showErrorMessage = true;
+    }
+    )
   }
 }
     // constructor(public Auth: AuthService) { }

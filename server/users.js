@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-// const saltRounds = 10;
-// const multer  = require('multer');
 
 const userSchema = new mongoose.Schema({
     username: {

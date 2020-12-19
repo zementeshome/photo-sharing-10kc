@@ -3,42 +3,6 @@ const fs = require('fs');
 const User = require('./users');
 // const User = mongoose.model('User');
 
-// register = async(req, res) => {
-//     const {username, password, email} = req.body;
-//     const newUser = new User({
-//         username, password, email
-//     });
-//     const userCreated = await newUser.save();
-//     res.json(userCreated);
-// }
-
-uploadImage = async (req, res, next) => {
-    console.log(req.body)
-    let file = req.file
-    let existingImage = await Photo.findOne({ 'name': req.file.filename }).exec();
-    if(existingImage && existingImage.isNew) {
-        existingImage.data = fs.readFileSync(file.path);
-        existingImage.caption = file.filename;
-        existingImage.contentType = file.mimetype;
-        let result = await existingImage.save();
-        if(result) {
-            res.json(true)
-        }
-    } else {
-        let photo = new Photo({
-            data: fs.readFileSync(__dirname + '/' + file.path),
-            caption: file.filename,
-            contentType: file.mimetype
-        });
-        try {
-            let result = await photo.save();
-            console.log(result)
-            res.json(true)
-        } catch (ex) {
-            console.log(ex)
-        }
-    }
-}
 
 loadImage = async (req, res, next) => {
     let user = await User.findOne({ 'username': req.params.username}).exec();
@@ -116,20 +80,8 @@ register = (req, res, next) => {
 }
 
 
-// register = async(req, res)=>{
-//     const {username, password, email} = req.body;
-//     const newUser = new User(
-//         username, password, email
-//     );
-//     const userCreated = await newUser.save();
-//     res.json(userCreated);
-// }
-
-
-
 exports.login = login;
 exports.register = register;
-exports.uploadImage = uploadImage;
 exports.loadImage = loadImage;
 exports.deleteImage = deleteImage;
 exports.uploadImageToProfile = uploadImageToProfile;

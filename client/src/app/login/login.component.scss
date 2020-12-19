@@ -2,6 +2,7 @@
 @import '../styles/partials/fonts';
 
 .login {
+    font-family: 'Aileron Thin';
 
     &__container {
         @include mobile {
@@ -39,6 +40,20 @@
             background-color: black;
             color: white;
             border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+    }
+
+    &__invalid-message {
+        @include mobile {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__invalid-text {
+        @include mobile {
+            color: red;
+            font-size: 12px;
         }
     }
 

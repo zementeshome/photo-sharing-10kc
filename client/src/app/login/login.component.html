@@ -6,10 +6,12 @@
             <label class="login__invalid-text" *ngIf="email.errors.pattern">user doesn't exist</label>
         </div> -->
         <input class="login__password" type="password" placeholder="password" id="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required>
-        <!-- <<div class="login__invalid-message" *ngIf="signUpForm.submitted && password.errors">
+        <div class="login__invalid-message" *ngIf="showErrorMessage"></div>
+        <label class="login__invalid-text">invalid username and password, please try again</label>
+        <!-- <div class="login__invalid-message" *ngIf="signUpForm.submitted && password.errors">
             <label class="login__invalid-text" *ngIf="password.errors.required">this field is required</label>
             <label class="login__invalid-text" *ngIf="password.errors.minlength">password is incorrect</label>
-        </div>  -->
+        </div> -->
       <button class="login__button" type="submit" value="Submit" (click)="loginUser($event)">login</button>
     </div>
 </form>

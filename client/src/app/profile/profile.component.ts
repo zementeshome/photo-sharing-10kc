@@ -2,8 +2,6 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { faSmile } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from '../shared/user.service';
 import { User } from '../shared/user.model';
-import { PhotoService } from '../shared/photo.service';
-import { PhotosComponent } from '../profile/photos/photos.component';
 import { HttpClient } from '@angular/common/http';
 
 // import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -13,7 +11,6 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
-  providers: [PhotoService]
 })
 export class ProfileComponent implements OnInit {
   faSmile = faSmile
