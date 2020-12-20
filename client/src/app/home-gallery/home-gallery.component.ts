@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faMeh } from '@fortawesome/free-solid-svg-icons';
+import { faSmile } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 import { Photo } from '../profile/profile.component';
 import { UserService } from '../shared/user.service';
@@ -10,8 +10,9 @@ import { User } from '../shared/user.model';
   styleUrls: ['./home-gallery.component.scss']
 })
 export class HomeGalleryComponent implements OnInit {
-  faMeh = faMeh
+  faSmile = faSmile
   imageSrc = '';
+  caption = '';
   user: User
 
   constructor(private http: HttpClient, public userService: UserService) { }

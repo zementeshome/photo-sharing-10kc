@@ -93,6 +93,11 @@
     margin-left: 10vw;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .profile__bio {
+    margin-left: 7vw;
+  }
+}
 .profile__form {
   display: none;
   width: 80%;
@@ -172,6 +177,11 @@
     margin-left: 10vw;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .profile__open-button {
+    margin-left: 7vw;
+  }
+}
 .profile__open-button-container {
   margin-top: -0.5rem;
   margin-bottom: 0.5rem;
@@ -180,5 +190,67 @@
   .profile__form-container {
     position: relative;
   }
+}
+@media only screen and (min-width: 320px) {
+  .profile__gallery-image {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 320px) {
+  .profile__gallery-image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .profile__gallery-image-container {
+    width: 60%;
+    margin: auto;
+    margin-top: 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .profile__gallery-image-container {
+    width: 40%;
+    margin-top: 1rem;
+  }
+}
+.profile__caption-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (min-width: 320px) {
+  .profile__gallery-caption, .profile__gallery-username, .profile__gallery-delete {
+    font-size: 13px;
+    padding-right: 0.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .profile__gallery-caption, .profile__gallery-username, .profile__gallery-delete {
+    font-size: 15px;
+  }
+}
+.profile__gallery-username {
+  font-family: "Aileron Bold";
+}
+.profile__gallery-delete {
+  background-color: transparent;
+  font-weight: bolder;
+  border: none;
 }
 /*# sourceMappingURL=profile.component.css.map */

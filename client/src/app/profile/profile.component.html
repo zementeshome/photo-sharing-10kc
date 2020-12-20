@@ -10,10 +10,10 @@
             <!-- <p class="profile__username">zzzemen</p> -->
         </div>
         <div class="profile__info">
-            <div class="profile__posts">
+            <!-- <div class="profile__posts">
                 <p class="profile__posts-number">10</p>
                 <p class="profile__posts-title">posts</p>
-            </div>
+            </div> -->
             <div class="profile__posts">
                 <p class="profile__posts-number">400</p>
                 <p class="profile__posts-title">followers</p>
@@ -49,8 +49,11 @@
     <div class="profile__gallery-container">
         <div class="profile__gallery-image-container">
             <img class="profile__gallery-image" [src]="imageSrc" alt="">
+            <div class="profile__caption-container">
+            <p class="profile__gallery-username">{{user.username}} •</p>
             <p class="profile__gallery-caption">{{user?.photo?.caption}}</p>
-            <button class="profile__gallery-delete" (click)="deleteImage()">delete</button>
+            <button class="profile__gallery-delete" (click)="deleteImage()">x</button>
+        </div>
         </div>
     </div>
 </section>
