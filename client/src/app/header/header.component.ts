@@ -6,12 +6,12 @@ import { UserService } from '../shared/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
 
   constructor(public userService: UserService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   logout() {
     this.userService.logout()

@@ -39,55 +39,6 @@ export class UserService {
     this.currentUser = null 
     this.router.navigate(['/']);
   }
-
-  // updateProfile(id, data) {
-  //   return this.http.get(`${this.environment.apiUrl}`)
-  // }
 }
-  // getAccessToken() {
-  //   return localStorage.getItem('access_token');
-  // }
 
-  // public isLoggedIn(): boolean {
-  //   let authToken = localStorage.getItem('access_token');
-  //   return (authToken !== null) ? true : false;
-  // }
-
-//   login(user: User) {
-//     return this.http.post<any>(`${environment.apiUrl}/login`, user)
-//       .subscribe((res: any) => {
-//         localStorage.setItem('access_token', res.token)
-//         this.getUserProfile(res._id).subscribe((res) => {
-//           this.currentUser = res;
-//           this.router.navigate(['/home']);
-//         })
-//       })
-//   }
-
-//   logout(){
-//     if (localStorage.removeItem('access_token') == null) {
-//       this.router.navigate(['/']);
-//     }
-//   }
-
-//   getUserProfile(id): Observable<any> {
-//     return this.http.get(`${environment.apiUrl}/profile/${id}`, { headers: this.headers }).pipe(
-//       map((res: Response) => {
-//         return res || {}
-//       }),
-//       catchError(this.handleError)
-//     )
-// }
-
-// handleError(error: HttpErrorResponse) {
-//   let msg = '';
-//   if (error.error instanceof ErrorEvent) {
-//     // client-side error
-//     msg = error.error.message;
-//   } else {
-//     // server-side error
-//     msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
-//   }
-//   return throwError(msg);
-// }
 

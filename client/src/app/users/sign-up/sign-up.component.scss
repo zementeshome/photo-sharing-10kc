@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Aileron Thin';
+    font-family: 'Aileron Regular';
 
     &__toggle-container {
         display: flex;
@@ -17,15 +17,12 @@
         @include mobile {
             border: none;
             outline: none;
-            font-family: 'Aileron Regular';
             background-color: transparent;
             border-bottom: 1px solid black;
             cursor: pointer;
-            margin-right: 1rem;
+            margin: 0 1rem 1rem 0;
             height: 30px;
-            margin-bottom: 1rem;
         }
-
     }
 
     &__toggle-signup:hover,
@@ -43,7 +40,6 @@
             border-radius: 5px;
             border: 2px solid black;
             outline: none;
-            font-family: 'Aileron Regular';
         }
         @include tablet {
             width: 30%;
@@ -62,7 +58,6 @@
         @include mobile {
             width: 30%;
             height: 28px;
-            font-family: 'Aileron Regular';
             border: 1px solid black;
             outline: none;
             background-color: black;
@@ -85,7 +80,7 @@
 
     &__invalid-text {
         @include mobile {
-            color: red;
+            color: white;
             font-size: 12px;
         }
     }

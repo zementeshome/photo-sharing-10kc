@@ -12,6 +12,7 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
  faMeh = faMeh
  faSmile = faSmile
@@ -20,9 +21,9 @@ export class HomeComponent implements OnInit {
  faUserNinja = faUserNinja
  faUserAstronaut = faUserAstronaut
  faUserSecret = faUserSecret
-  constructor() { }
+  
+ constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

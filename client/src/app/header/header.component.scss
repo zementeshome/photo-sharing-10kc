@@ -16,8 +16,7 @@ html, body {
         @include mobile {
             font-family: 'Aileron Black';
             font-size: 25px;
-            margin-top: 0.6rem;
-            margin-left: 3vw;
+            margin: 0.6rem 0 0 0.6rem;
             outline: none;
         }
         @include tablet {
@@ -26,8 +25,10 @@ html, body {
     }
 
     &__container {
-        display: flex;
-        justify-content: space-between;
+        @include mobile {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &__nav-list {

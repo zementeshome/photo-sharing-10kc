@@ -1,15 +1,14 @@
 <section class="gallery">
     <div class="gallery__container">
-        <div class="gallery__image-container">
-            <div class="gallery__user-container">
-            <div class="gallery__image-border"><p class="gallery__user-image"><fa-icon [icon]="faSmile"></fa-icon></p></div>
-            <p class="gallery__username">{{user.username}}</p>
-            </div>
-            <img class="gallery__image" [src]="imageSrc" alt="">
-            <div class="gallery__caption-container">
-            <p class="gallery__username-caption">{{user.username}} •</p>
-            <p class="gallery__caption">{{user?.photo?.caption}}</p>
-        </div>
-        </div>
+    <div class="gallery__image-container">
+    <div class="gallery__user-container">
+    <div class="gallery__image-border"><p class="gallery__user-image"><fa-icon [icon]="faSmile"></fa-icon></p></div>
+        <p class="gallery__username">{{user.username}}</p>
     </div>
+        <img class="gallery__image" [src]="imageSrc" alt="">
+    <div class="gallery__caption-container">
+        <p class="gallery__caption">{{user?.photo?.caption}}</p>
+    </div>
+     </div>
+   </div>
 </section>

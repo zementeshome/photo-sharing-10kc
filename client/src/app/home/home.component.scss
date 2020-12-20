@@ -21,8 +21,7 @@
 
     &__image-container {
         @include mobile {
-            padding-right: 2vw;
-            padding-top: 1rem;
+            padding: 1rem 2vw 0 0;
         }
     }
 
@@ -51,10 +50,9 @@
             border-radius: 50%;
             border: solid 1px;
             animation: rainbow 5s linear infinite;
-            // border: 2px solid linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
         }
     }
-
+    
     @keyframes rainbow {
         0% { border-color: #b827fc}
         25% { border-color: #2c90fc}

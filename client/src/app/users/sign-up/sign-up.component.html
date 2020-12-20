@@ -1,22 +1,22 @@
 <div class="form__toggle-container">
-<button class="form__toggle-signup" (click)="toggleForm()">sign up</button>
-<button class="form__toggle-login" (click)="toggleLogin()">login</button>
+    <button class="form__toggle-signup" (click)="toggleForm()">sign up</button>
+    <button class="form__toggle-login" (click)="toggleLogin()">login</button>
 </div>
 <form class="form" #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)" *ngIf="showSignUp">
     <input type="text" class="form__username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" name="username" placeholder="username" required [ngClass]="{'form__invalid' :signUpForm.submitted && !username.valid}">
-    <div class="form__invalid-message" *ngIf="signUpForm.submitted && !username.valid">
-        <label class="form__invalid-text">this field is required</label>
-    </div> 
+<div class="form__invalid-message" *ngIf="signUpForm.submitted && !username.valid">
+    <label class="form__invalid-text">this field is required</label>
+</div> 
     <input type="text" class="form__email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" name="email" placeholder="email" required [pattern]="emailRegex" [ngClass]="{'form__invalid' :signUpForm.submitted && !email.valid}">
-    <div class="form__invalid-message" *ngIf="signUpForm.submitted && email.errors">
-        <label class="form__invalid-text" *ngIf="email.errors.required">this field is required</label>
-        <label class="form__invalid-text" *ngIf="email.errors.pattern">invalid email address</label>
-    </div>
+<div class="form__invalid-message" *ngIf="signUpForm.submitted && email.errors">
+    <label class="form__invalid-text" *ngIf="email.errors.required">this field is required</label>
+    <label class="form__invalid-text" *ngIf="email.errors.pattern">invalid email address</label>
+</div>
     <input type="password" class="form__password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" name="password" placeholder="password" minlength="6" required [ngClass]="{'form__invalid' :signUpForm.submitted && !password.valid}">
-    <div class="form__invalid-message" *ngIf="signUpForm.submitted && password.errors">
-        <label class="form__invalid-text" *ngIf="password.errors.required">this field is required</label>
-        <label class="form__invalid-text" *ngIf="password.errors.minlength">password must be atleast 6 characters long</label>
-    </div>
+<div class="form__invalid-message" *ngIf="signUpForm.submitted && password.errors">
+    <label class="form__invalid-text" *ngIf="password.errors.required">this field is required</label>
+    <label class="form__invalid-text" *ngIf="password.errors.minlength">password must be atleast 6 characters long</label>
+</div>
     <button class="form__button" type="submit" value="Sign Up">sign up</button>
 </form>
 <div class="form__error" *ngIf="serverErrorMessage">

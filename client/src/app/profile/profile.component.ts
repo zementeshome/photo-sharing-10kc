@@ -4,9 +4,8 @@ import { UserService } from '../shared/user.service';
 import { User } from '../shared/user.model';
 import { HttpClient } from '@angular/common/http';
 
-// import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-// import { environment } from '../../environments/environment';
- export interface Photo{ data: string; contentType: string ; caption:string;} 
+export interface Photo{ data: string; contentType: string ; caption:string;} 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -18,9 +17,7 @@ export class ProfileComponent implements OnInit {
   selectedFile: File
   imageSrc = '';
   caption='';
-  images;
-  // images = [];
-// multipleImages = [];
+
   constructor(private userService: UserService, private http: HttpClient) { }
 
   openForm() {
@@ -30,7 +27,6 @@ export class ProfileComponent implements OnInit {
   closeForm() {
     document.getElementById('profileForm').style.display = 'none';
   }
-
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user'));
@@ -47,36 +43,7 @@ export class ProfileComponent implements OnInit {
 
     onFileChanged(event) {
       this.selectedFile = event.target.files[0]
-      // if (event.target.files.length > 0) {
-      //   this.multipleImages = event.target.files
-      // }
     }
-
-    // onMultipleFilesChanged(event) {
-    //   if (event.target.files.length > 0) {
-    //     const file = event.target.files[0];
-    //     this.images = file
-    //   }
-    // }
-
-    //  onMultipleUpload() {
-    //   const uploadData = new FormData();
-    //   for (let img of this.multipleImages) {
-    //     uploadData.append('files', img);
-    //   uploadData.append('caption', this.caption)
-    //   }
-    //   this.http.post(`http://localhost:4000/api/uploads/${this.user.username}`, uploadData)
-    //     .subscribe(success => {
-    //       if (success) {
-    //         this.http.get(`http://localhost:4000/api/loadimage/${this.user.username}`).subscribe((updatedImage:Photo) => {
-    //           this.imageSrc = this.constructImageSrc(updatedImage);
-    //           this.user.photo = updatedImage;
-    //           console.log('hey' + updatedImage);
-    //         })
-    //       }
-    //     });
-    // }
-
 
     deleteImage = ()=>{
       this.http.delete(`http://localhost:4000/api/image/${this.user.username}`).subscribe(success=>{
@@ -87,12 +54,9 @@ export class ProfileComponent implements OnInit {
 
 
     onUpload() {
-      // upload code goes here
       const uploadData = new FormData();
       uploadData.append('photo', this.selectedFile);
       uploadData.append('caption', this.caption );
-      console.log(uploadData, this.selectedFile);
-  
       this.http.post(`http://localhost:4000/api/upload/${this.user.username}`, uploadData)
         .subscribe(success => {
           if (success) {
@@ -103,62 +67,6 @@ export class ProfileComponent implements OnInit {
             })
           }
         });
+      }
     }
-  }
-
-
-    // this.user = this.userService.getCurrentUser()
-    // console.log(this.user)
-    // this.getPhotos()
-    // this.photoUrl = this.photoService.apiUrl;
-
-
-  // getPhotos(): void {
-  //   this.photoService.getPhotos()
-  //       .subscribe(photos => {
-  //         this.photos = photos.reverse();
-  //         });
-  // }
-
-  // delete(photo): void{
-  //   if (confirm(`Are you sure you want to delete id#: ${photo._id}?`)){
-  //     this.photoService.deletePhoto(photo._id).subscribe(()=>{
-  //       this.getPhotos();
-  //       //if delete a picture, a flash message is displayed
-  //       // this._flashMessagesService.show(`Deleted ${photo._id}`, { cssClass: 'alert-success',timeout: 4000 } );
-  //     });
-  //   }
-  // }
-
-  // onSubmit(){
-  //   let formData = new FormData()
-  //   formData.append('photo', this.photo.photo)
-  //   formData.append('caption', this.photo.caption)
-
-  //   this.photoService.uploadPhoto(formData).subscribe((photo) => {
-  //     this.photosComponent.getPhoto()
-  //   })
-  // }
-
-  // handleSubmit(target) {
-  //   let photoFile = target.files[0];
-  //   this.photo.photo = photoFile;
-  // }
-
-  // getPhotos(): void {
-  //   this.
-  // }
-
-
-  // onFileChange(e: any) {
-  //   this.files = e.target.files;
-  // }
-
-  // onUpload() {
-  //   const formData = new FormData();
-  //   for ( const file of this.files) {
-  //     formData.append(name, file, file.name)
-  //   }
-  //   return this.http.post(environment.apiUrl + '/:id', formData)
-  // }
 

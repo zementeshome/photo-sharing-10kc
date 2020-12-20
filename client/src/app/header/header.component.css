@@ -43,8 +43,7 @@ html, body {
   .header__logo {
     font-family: "Aileron Black";
     font-size: 25px;
-    margin-top: 0.6rem;
-    margin-left: 3vw;
+    margin: 0.6rem 0 0 0.6rem;
     outline: none;
   }
 }
@@ -53,13 +52,15 @@ html, body {
     font-size: 30px;
   }
 }
-.header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media only screen and (min-width: 320px) {
+  .header__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 @media only screen and (min-width: 320px) {
   .header__nav-list {

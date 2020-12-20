@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { AuthService } from '../auth.service';
 import { UserService } from '../shared/user.service';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import { FormBuilder, FormGroup} from "@angular/forms";
 import { User } from '../shared/user.model';
 
 @Component({
@@ -17,13 +14,7 @@ username: string
 password: string
 showErrorMessage: boolean;
 
-
- constructor(public userService: UserService, public formBuilder: FormBuilder, public router: Router) {
-  // this.loginForm= this.formBuilder.group({
-  //   username: [''],
-  //   password: ['']
-  // })
- }
+constructor(public userService: UserService, public router: Router) {}
 
   ngOnInit() {
   }
@@ -45,5 +36,4 @@ showErrorMessage: boolean;
     )
   }
 }
-    // constructor(public Auth: AuthService) { }
 

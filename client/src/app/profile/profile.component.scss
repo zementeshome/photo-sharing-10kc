@@ -6,26 +6,33 @@
     cursor: pointer;
 
     &__user-container {
-        border-top: 1px solid #e1e1e1;
-        border-bottom: 1px solid #e1e1e1;
+        @include mobile {
+            border-top: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;
+        }
     }
 
     &__user-border {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        border: 1px solid black;
-        margin-top: 1rem;
-        margin-left: 3vw;
+        @include mobile {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin: 1rem 0 0 3vw;
+        }
     }
 
     &__image {
-        display: flex;
-        justify-content: center;
+        @include mobile {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__image-container {
-        display: flex;
+        @include mobile {
+            display: flex;
+        }
     }
 
     &__username {
@@ -35,22 +42,29 @@
     }
 
     &__info {
-        display: flex;
-        margin-left: 4.2rem;
-        margin-top: -2rem;
+        @include mobile {
+            display: flex;
+            margin: -2rem 0 0 4.2rem;
+        }
     }
 
     &__posts-number {
-        font-family: 'Aileron Bold';
+        @include mobile {
+            font-family: 'Aileron Bold';
+        }
     }
 
     &__posts {
-        padding-left: 3vw;
+        @include mobile {
+            padding-left: 3vw;
+        }
     }
 
     &__posts-number {
-        display: flex;
-        justify-content: center;
+        @include mobile {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     &__bio {
@@ -87,8 +101,10 @@
     }
 
     &__gallery-image {
-        width: 50%;
-        border-radius: 5px;
+        @include mobile {
+            width: 50%;
+            border-radius: 5px;
+        }
     }
 
     &__button-container {
@@ -115,15 +131,11 @@
     &__form-input,
     &__form-button {
         @include mobile {
-            // margin: auto;
             display: flex;
-            // flex-direction: column;
             align-items: left;
-            margin-left: 3vw;
-            margin-top: 0.5rem;
+            margin: 0.5rem 0 0 3vw;
             font-size: 15px;
             font-family: 'Aileron Regular';
-            // justify-content: center;
         }
     }
 
@@ -141,25 +153,20 @@
             color: white;
             border: 1px solid black;
             border-radius: 5px;
-            // margin: auto;
             margin-top: 2rem;
-            // font-size: 12px;
-
+          }
         }
-    }
 
     &__open-button {
         @include mobile {
             background-color: black;
             color: white; 
-            margin-left: 3vw;
+            margin: 0.2rem 0 0.5rem 3vw;
             border: 1px solid black;
             border-radius: 5px;
             font-family: 'Aileron Regular';
             font-size: 12px;
             height: 30px;
-            margin-bottom: 0.5rem;
-            margin-top: 0.2rem;
         }
         @include tablet {
             margin-left: 12vw;
@@ -170,8 +177,9 @@
     }
 
     &__open-button-container {
-        margin-top: -0.5rem;
-        margin-bottom: 0.5rem;
+        @include mobile {
+            margin: -0.5rem 0 0.5rem 0;
+        }
     }
 
     &__form-container {
@@ -197,8 +205,7 @@
         }
         @include tablet {
             width: 60%;
-            margin: auto;
-            margin-top: 1rem;
+            margin: 1rem auto;
         }
         @include desktop {
             width: 40%;
@@ -207,8 +214,10 @@
     }
 
     &__caption-container{
-        display: flex; 
-        justify-content: space-between;
+        @include mobile {
+            display: flex; 
+            justify-content: space-between;
+        }
     }
 
     &__gallery-caption,
@@ -224,20 +233,16 @@
     }
 
     &__gallery-username {
-        font-family: 'Aileron Bold';
+        @include mobile {
+            font-family: 'Aileron Bold';
+        }
     }
 
     &__gallery-delete {
-        background-color: transparent;
-        font-weight: bolder;
-        border: none;
-
+        @include mobile {
+            background-color: transparent;
+            font-weight: bolder;
+            border: none;
+        }
     }
-
-    // &__gallery-delete {
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: flex-end;
-    //     margin: 0;
-    // }
 }

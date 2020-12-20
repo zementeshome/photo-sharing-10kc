@@ -28,12 +28,16 @@
   font-weight: normal;
   src: url("./../fonts/Aileron-UltraLight.woff") format("woff");
 }
-.gallery {
-  font-family: "Aileron Thin";
-  font-size: 15px;
-}
 @media only screen and (min-width: 320px) {
-  .gallery__image-container {
+  .home__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 1px solid #e1e1e1;
     border-radius: 5px;
     width: 100%;
@@ -41,72 +45,84 @@
   }
 }
 @media only screen and (min-width: 1200px) {
-  .gallery__image-container {
+  .home__container {
     width: 60%;
-    margin: 1rem auto;
+    margin: auto;
   }
 }
 @media only screen and (min-width: 320px) {
-  .gallery__image {
-    width: 100%;
+  .home__image-container {
+    padding: 1rem 2vw 0 0;
   }
 }
 @media only screen and (min-width: 320px) {
-  .gallery__user-container {
-    padding-left: 3vw;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 0.5rem 0 0.5rem 3vw;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .gallery__user-container {
-    padding: 1rem 0 1rem 3vw;
-  }
-}
-@media only screen and (min-width: 320px) {
-  .gallery__image-border {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 1px solid black;
-    margin-top: 0.5rem;
-  }
-}
-@media only screen and (min-width: 320px) {
-  .gallery__user-image {
+  .home__image {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    font-size: 20px;
-    margin-top: 0.8rem;
   }
 }
 @media only screen and (min-width: 320px) {
-  .gallery__username {
-    padding: 0.5rem 0 0 1rem;
-  }
-}
-@media only screen and (min-width: 320px) {
-  .gallery__caption-container {
+  .home__username {
+    font-family: "Aileron Thin";
+    font-size: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 0.5rem 0 0 3vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .home__username {
+    font-size: 13px;
   }
 }
 @media only screen and (min-width: 320px) {
-  .gallery__caption {
-    font-size: 15px;
+  .home__image-border {
+    width: 50px;
+    border-radius: 50%;
+    border: solid 1px;
+    -webkit-animation: rainbow 5s linear infinite;
+            animation: rainbow 5s linear infinite;
   }
 }
-@media only screen and (min-width: 768px) {
-  .gallery__caption {
-    font-size: 18px;
+@-webkit-keyframes rainbow {
+  0% {
+    border-color: #b827fc;
+  }
+  25% {
+    border-color: #2c90fc;
+  }
+  50% {
+    border-color: #b8fd33;
+  }
+  75% {
+    border-color: #fec837;
+  }
+  100% {
+    border-color: #fd1892;
   }
 }
-/*# sourceMappingURL=home-gallery.component.css.map */
+@keyframes rainbow {
+  0% {
+    border-color: #b827fc;
+  }
+  25% {
+    border-color: #2c90fc;
+  }
+  50% {
+    border-color: #b8fd33;
+  }
+  75% {
+    border-color: #fec837;
+  }
+  100% {
+    border-color: #fd1892;
+  }
+}
+/*# sourceMappingURL=home.component.css.map */

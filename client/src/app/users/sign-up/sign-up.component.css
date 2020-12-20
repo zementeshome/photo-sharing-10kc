@@ -39,7 +39,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Aileron Thin";
+  font-family: "Aileron Regular";
 }
 .form__toggle-container {
   display: -webkit-box;
@@ -53,13 +53,11 @@
   .form__toggle-signup, .form__toggle-login {
     border: none;
     outline: none;
-    font-family: "Aileron Regular";
     background-color: transparent;
     border-bottom: 1px solid black;
     cursor: pointer;
-    margin-right: 1rem;
+    margin: 0 1rem 1rem 0;
     height: 30px;
-    margin-bottom: 1rem;
   }
 }
 .form__toggle-signup:hover, .form__toggle-login:hover {
@@ -73,7 +71,6 @@
     border-radius: 5px;
     border: 2px solid black;
     outline: none;
-    font-family: "Aileron Regular";
   }
 }
 @media only screen and (min-width: 768px) {
@@ -110,7 +107,6 @@
   .form__button {
     width: 30%;
     height: 28px;
-    font-family: "Aileron Regular";
     border: 1px solid black;
     outline: none;
     background-color: black;
@@ -136,7 +132,7 @@
 }
 @media only screen and (min-width: 320px) {
   .form__invalid-text {
-    color: red;
+    color: white;
     font-size: 12px;
   }
 }
