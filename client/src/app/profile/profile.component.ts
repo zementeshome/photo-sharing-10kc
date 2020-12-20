@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   selectedFile: File
   imageSrc = '';
 caption='';
+multipleImages = [];
   constructor(private userService: UserService, private http: HttpClient) { }
 
   openForm() {
@@ -46,6 +47,10 @@ caption='';
       this.selectedFile = event.target.files[0]
     }
 
+    onMultipleFilesChanged(event) {
+      this.multipleImages = event.target.files
+    }
+
     deleteImage = ()=>{
       this.http.delete(`http://localhost:4000/api/image/${this.user.username}`).subscribe(success=>{
         this.imageSrc = '';
@@ -53,9 +58,27 @@ caption='';
       })
     } 
 
+    onMultipleUpload() {
+      const uploadData = new FormData();
+      for (let img of this.multipleImages) {
+        uploadData.append('files', img);
+      uploadData.append('caption', this.caption)
+      }
+      this.http.post(`http://localhost:4000/api/upload/${this.user.username}`, uploadData)
+        .subscribe(success => {
+          if (success) {
+            this.http.get(`http://localhost:4000/api/loadimage/${this.user.username}`).subscribe((updatedImage:Photo) => {
+              this.imageSrc = this.constructImageSrc(updatedImage);
+              this.user.photo = updatedImage;
+              console.log('hey' + updatedImage);
+            })
+          }
+        });
+    }
+
+
     onUpload() {
       // upload code goes here
-      
       const uploadData = new FormData();
       uploadData.append('photo', this.selectedFile);
       uploadData.append('caption', this.caption );
@@ -63,7 +86,6 @@ caption='';
   
       this.http.post(`http://localhost:4000/api/upload/${this.user.username}`, uploadData)
         .subscribe(success => {
-          console.log('abc' + success)
           if (success) {
             this.http.get(`http://localhost:4000/api/loadimage/${this.user.username}`).subscribe((updatedImage:Photo) => {
               this.imageSrc = this.constructImageSrc(updatedImage);
@@ -74,6 +96,7 @@ caption='';
         });
     }
   }
+
 
     // this.user = this.userService.getCurrentUser()
     // console.log(this.user)

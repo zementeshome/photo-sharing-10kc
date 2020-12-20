@@ -38,11 +38,11 @@
         <label class="profile__form-label">upload a photo</label>
         <button type="submit" class="profile__form-exit-button" (click)="closeForm()">x</button>
     </div>
-        <input type="file" class="profile__form-input" name="photo" id="photo" (change)="onFileChanged($event)">
+        <input type="file" class="profile__form-input" name="photo" id="photo" multiple="multiple" (change)="onMultipleFilesChanged($event)">
         <!-- <button (click)="fileInput.click()">select file</button> -->
         <label class="profile__form-label">caption:</label>
         <input type="text" class="profile__form-input" name="caption" id="caption" [(ngModel)]="caption">
-        <button type="submit" class="profile__form-button" (click)="onUpload()">upload</button>
+        <button type="submit" class="profile__form-button" (click)="onMultipleUpload()">upload</button>
         <!-- <button type="submit" class="profile__form-button" (click)="closeForm()">close</button> -->
     </form>
 </div>

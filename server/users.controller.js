@@ -58,6 +58,23 @@ uploadImageToProfile = async (req, res, next) => {
     }
 }
 
+uploadMultipleImagesToProfile = async (req, res, next) => {
+    let files = req.files
+    console.log(req.files)
+    let user = await User.findOne({'username': req.params.username}).exec();
+    if(user) {
+        let data = fs.readFileSync(__dirname+'/'+file.path);
+        user.photo = {
+            caption: req.body.caption,
+            data: data,
+            contentType: files.mimetype
+        };
+        let result = await user.save();
+        console.log(result)
+        res.json(true)
+    }
+}
+
 register = (req, res, next) => {
     const user = new User();
     user.username = req.body.username;
@@ -85,6 +102,7 @@ exports.register = register;
 exports.loadImage = loadImage;
 exports.deleteImage = deleteImage;
 exports.uploadImageToProfile = uploadImageToProfile;
+exports.uploadMultipleImagesToProfile = uploadMultipleImagesToProfile;
 
 
  
