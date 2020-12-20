@@ -22,6 +22,9 @@ html, body {
         @include tablet {
             font-size: 30px;
         }
+        @include desktop {
+            margin: 0.3rem 0 0 3vw;
+        }
     }
 
     &__container {

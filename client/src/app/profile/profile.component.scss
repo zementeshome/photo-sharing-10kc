@@ -216,7 +216,7 @@
     &__caption-container{
         @include mobile {
             display: flex; 
-            justify-content: space-between;
+            justify-content: flex-start;
         }
     }
 
@@ -243,6 +243,7 @@
             background-color: transparent;
             font-weight: bolder;
             border: none;
+            outline: none;
         }
     }
 }
