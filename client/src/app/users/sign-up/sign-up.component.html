@@ -1,4 +1,8 @@
-<form class="form" #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+<div class="form__toggle-container">
+<button class="form__toggle-signup" (click)="toggleForm()">sign up</button>
+<button class="form__toggle-login" (click)="toggleLogin()">login</button>
+</div>
+<form class="form" #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)" *ngIf="showSignUp">
     <input type="text" class="form__username" #username="ngModel" [(ngModel)]="userService.selectedUser.username" name="username" placeholder="username" required [ngClass]="{'form__invalid' :signUpForm.submitted && !username.valid}">
     <div class="form__invalid-message" *ngIf="signUpForm.submitted && !username.valid">
         <label class="form__invalid-text">this field is required</label>
@@ -15,12 +19,8 @@
     </div>
     <button class="form__button" type="submit" value="Sign Up">sign up</button>
 </form>
-<div class="form__success" *ngIf="showSuccessMessage">
-    account created
-</div>
 <div class="form__error" *ngIf="serverErrorMessage">
     {{serverErrorMessage}}
 </div>
- <!-- TODO:don't think  i need these messages-->
-<app-login></app-login>
+<app-login *ngIf="showLogin"></app-login>
 <router-outlet></router-outlet>

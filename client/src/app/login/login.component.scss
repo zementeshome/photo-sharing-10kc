@@ -23,11 +23,17 @@
             outline: none;
             font-family: 'Aileron Regular';
         }
+        @include tablet {
+            width: 30%;
+        }
+        @include desktop {
+            width: 20%;
+        }
     }
 
     ::placeholder {
         font-family: 'Aileron Thin';
-        padding-left: 2vw;
+        padding-left: 0.5rem;
     }
 
     &__button {
@@ -41,6 +47,12 @@
             color: white;
             border-radius: 5px;
             margin-top: 0.5rem;
+        }
+        @include tablet {
+            width: 15%;
+        }
+        @include desktop {
+            width: 10%;
         }
     }
 

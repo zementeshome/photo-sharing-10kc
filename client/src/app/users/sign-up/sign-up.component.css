@@ -41,6 +41,30 @@
           align-items: center;
   font-family: "Aileron Thin";
 }
+.form__toggle-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media only screen and (min-width: 320px) {
+  .form__toggle-signup, .form__toggle-login {
+    border: none;
+    outline: none;
+    font-family: "Aileron Regular";
+    background-color: white;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    margin-right: 1rem;
+    height: 30px;
+    margin-bottom: 1rem;
+  }
+}
+.form__toggle-signup:hover, .form__toggle-login:hover {
+  font-weight: bolder;
+}
 @media only screen and (min-width: 320px) {
   .form__username, .form__email, .form__password {
     width: 60%;
@@ -52,25 +76,35 @@
     font-family: "Aileron Regular";
   }
 }
+@media only screen and (min-width: 768px) {
+  .form__username, .form__email, .form__password {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .form__username, .form__email, .form__password {
+    width: 20%;
+  }
+}
 .form ::-webkit-input-placeholder {
   font-family: "Aileron Thin";
-  padding-left: 2vw;
+  padding-left: 0.5rem;
 }
 .form ::-moz-placeholder {
   font-family: "Aileron Thin";
-  padding-left: 2vw;
+  padding-left: 0.5rem;
 }
 .form :-ms-input-placeholder {
   font-family: "Aileron Thin";
-  padding-left: 2vw;
+  padding-left: 0.5rem;
 }
 .form ::-ms-input-placeholder {
   font-family: "Aileron Thin";
-  padding-left: 2vw;
+  padding-left: 0.5rem;
 }
 .form ::placeholder {
   font-family: "Aileron Thin";
-  padding-left: 2vw;
+  padding-left: 0.5rem;
 }
 @media only screen and (min-width: 320px) {
   .form__button {
@@ -82,6 +116,17 @@
     background-color: black;
     color: white;
     margin-top: 0.5rem;
+    border-radius: 5px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .form__button {
+    width: 15%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .form__button {
+    width: 10%;
   }
 }
 @media only screen and (min-width: 320px) {

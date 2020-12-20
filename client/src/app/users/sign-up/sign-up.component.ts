@@ -11,20 +11,28 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  showSuccessMessage: boolean;
+  // showSuccessMessage: boolean;
   serverErrorMessage: string;
+  showSignUp: boolean;
+  showLogin: boolean;
 
   constructor(public userService: UserService, public router: Router) { }
 
   ngOnInit() {
   }
 
+  toggleForm() {
+    this.showSignUp = !this.showSignUp
+  }
+
+  toggleLogin() {
+    this.showLogin = !this.showLogin
+  }
+
   onSubmit(form: NgForm) {
     if(form.valid === true)
     this.userService.postUser(form.value).subscribe(
       res => {
-        this.showSuccessMessage = true;
-        setTimeout(() => this.showSuccessMessage = false, 4000);
         this.resetForm(form);
         localStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['/home'])

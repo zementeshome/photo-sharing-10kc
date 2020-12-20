@@ -30,6 +30,7 @@ showErrorMessage: boolean;
 
   loginUser(e) {
     e.preventDefault()
+    this.showErrorMessage = false;
     this.userService.login(this.username, this.password).subscribe((user: User) => {
       if (user) {
        this.userService.setCurrentUser(user)

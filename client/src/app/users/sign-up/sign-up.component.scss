@@ -7,6 +7,32 @@
     align-items: center;
     font-family: 'Aileron Thin';
 
+    &__toggle-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__toggle-signup,
+    &__toggle-login {
+        @include mobile {
+            border: none;
+            outline: none;
+            font-family: 'Aileron Regular';
+            background-color: white;
+            border-bottom: 1px solid black;
+            cursor: pointer;
+            margin-right: 1rem;
+            height: 30px;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    &__toggle-signup:hover,
+    &__toggle-login:hover {
+        font-weight: bolder;
+    }
+
     &__username,
     &__email,
     &__password {
@@ -19,11 +45,17 @@
             outline: none;
             font-family: 'Aileron Regular';
         }
+        @include tablet {
+            width: 30%;
+        }
+        @include desktop {
+            width: 20%;
+        }
     }
 
     ::placeholder {
         font-family: 'Aileron Thin';
-        padding-left: 2vw;
+        padding-left: 0.5rem;
     }
 
     &__button {
@@ -36,6 +68,13 @@
             background-color: black;
             color: white;
             margin-top: 0.5rem;
+            border-radius: 5px;
+        }
+        @include tablet {
+            width: 15%;
+        }
+        @include desktop {
+            width: 10%;
         }
     }
     &__invalid-message {
