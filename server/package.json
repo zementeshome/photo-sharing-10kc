@@ -23,7 +23,7 @@
     "nodemon": "^2.0.6"
   },
   "development": {
-    "port": 3000,
+    "port": 4000,
     "mongodb_uri": "mongodb://localhost:27017/CrudDB"
   }
 }

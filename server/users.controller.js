@@ -6,7 +6,6 @@ const User = require('./users');
 loadImage = async (req, res, next) => {
     let user = await User.findOne({ 'username': req.params.username}).exec();
     if(user) {
-        console.log(user);
         res.json({ data: user.photo.data? user.photo.data.toString('base64') : null, contentType: user.photo.contentType, caption: user.photo.caption})
     }
 }
@@ -20,7 +19,7 @@ login = async(req, res, next) =>  {
              contentType: user.photo.contentType,
              caption: user.photo.caption
          }});
-     }else{
+     } else {
          res.status(404).send("this user doesn't exist")
      }
  }
@@ -37,10 +36,7 @@ login = async(req, res, next) =>  {
 
 uploadImageToProfile = async (req, res, next) => {
     let file = req.file
-    console.log(req.file);
-    console.log('caption', req.body.caption)
     let user = await User.findOne({ 'username': req.params.username }).exec();
-    console.log('user',user);
     if(user){
         console.log(__dirname+'/'+file.path);
         let data = fs.readFileSync( __dirname+'/'+file.path);
@@ -50,12 +46,11 @@ uploadImageToProfile = async (req, res, next) => {
             data: data,
             contentType: file.mimetype
         };
-
         let result = await user.save();
         console.log(result)
         res.json(true)
-    }
-}
+     }
+  }
 
 register = (req, res, next) => {
     const user = new User();

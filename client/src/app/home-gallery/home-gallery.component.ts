@@ -30,7 +30,6 @@ export class HomeGalleryComponent implements OnInit {
     this.http.get(`http://localhost:4000/api/loadimage/${this.user.username}`).subscribe((updatedImage:Photo) => {
         this.imageSrc = this.constructImageSrc(updatedImage);
         this.user.photo = updatedImage;
-        console.log('hey' + updatedImage);
       })
     }
   }
