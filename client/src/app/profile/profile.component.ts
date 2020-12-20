@@ -17,8 +17,10 @@ export class ProfileComponent implements OnInit {
   user: { username: string, email: string, photo: Photo};
   selectedFile: File
   imageSrc = '';
-caption='';
-multipleImages = [];
+  caption='';
+  images;
+  // images = [];
+// multipleImages = [];
   constructor(private userService: UserService, private http: HttpClient) { }
 
   openForm() {
@@ -45,11 +47,36 @@ multipleImages = [];
 
     onFileChanged(event) {
       this.selectedFile = event.target.files[0]
+      // if (event.target.files.length > 0) {
+      //   this.multipleImages = event.target.files
+      // }
     }
 
-    onMultipleFilesChanged(event) {
-      this.multipleImages = event.target.files
-    }
+    // onMultipleFilesChanged(event) {
+    //   if (event.target.files.length > 0) {
+    //     const file = event.target.files[0];
+    //     this.images = file
+    //   }
+    // }
+
+    //  onMultipleUpload() {
+    //   const uploadData = new FormData();
+    //   for (let img of this.multipleImages) {
+    //     uploadData.append('files', img);
+    //   uploadData.append('caption', this.caption)
+    //   }
+    //   this.http.post(`http://localhost:4000/api/uploads/${this.user.username}`, uploadData)
+    //     .subscribe(success => {
+    //       if (success) {
+    //         this.http.get(`http://localhost:4000/api/loadimage/${this.user.username}`).subscribe((updatedImage:Photo) => {
+    //           this.imageSrc = this.constructImageSrc(updatedImage);
+    //           this.user.photo = updatedImage;
+    //           console.log('hey' + updatedImage);
+    //         })
+    //       }
+    //     });
+    // }
+
 
     deleteImage = ()=>{
       this.http.delete(`http://localhost:4000/api/image/${this.user.username}`).subscribe(success=>{
@@ -57,24 +84,6 @@ multipleImages = [];
         this.caption = '';
       })
     } 
-
-    onMultipleUpload() {
-      const uploadData = new FormData();
-      for (let img of this.multipleImages) {
-        uploadData.append('files', img);
-      uploadData.append('caption', this.caption)
-      }
-      this.http.post(`http://localhost:4000/api/upload/${this.user.username}`, uploadData)
-        .subscribe(success => {
-          if (success) {
-            this.http.get(`http://localhost:4000/api/loadimage/${this.user.username}`).subscribe((updatedImage:Photo) => {
-              this.imageSrc = this.constructImageSrc(updatedImage);
-              this.user.photo = updatedImage;
-              console.log('hey' + updatedImage);
-            })
-          }
-        });
-    }
 
 
     onUpload() {

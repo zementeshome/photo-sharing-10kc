@@ -1,23 +1,22 @@
 const Photo = require('./photos');
 const fs = require('fs');
 const User = require('./users');
-// const User = mongoose.model('User');
 
 
 loadImage = async (req, res, next) => {
     let user = await User.findOne({ 'username': req.params.username}).exec();
     if(user) {
         console.log(user);
-        res.json({ data: user.photo.data.toString('base64'), contentType: user.photo.contentType, caption: user.photo.caption})
+        res.json({ data: user.photo.data? user.photo.data.toString('base64') : null, contentType: user.photo.contentType, caption: user.photo.caption})
     }
 }
 
 login = async(req, res, next) =>  {
     const {username, password} = req.body
     const user = await User.findOne({'username': username,'password': password}).exec()
-     if(user.email){ // should be user?.
+     if(user.email){
          res.json({username: user.username, email: user.email, photo: {
-             data: user.photo.data.toString('base64'),
+             data: user.photo.data? user.photo.data.toString('base64'): null,
              contentType: user.photo.contentType,
              caption: user.photo.caption
          }});
@@ -58,23 +57,6 @@ uploadImageToProfile = async (req, res, next) => {
     }
 }
 
-uploadMultipleImagesToProfile = async (req, res, next) => {
-    let files = req.files
-    console.log(req.files)
-    let user = await User.findOne({'username': req.params.username}).exec();
-    if(user) {
-        let data = fs.readFileSync(__dirname+'/'+file.path);
-        user.photo = {
-            caption: req.body.caption,
-            data: data,
-            contentType: files.mimetype
-        };
-        let result = await user.save();
-        console.log(result)
-        res.json(true)
-    }
-}
-
 register = (req, res, next) => {
     const user = new User();
     user.username = req.body.username;
@@ -96,13 +78,11 @@ register = (req, res, next) => {
     });
 }
 
-
 exports.login = login;
 exports.register = register;
 exports.loadImage = loadImage;
 exports.deleteImage = deleteImage;
 exports.uploadImageToProfile = uploadImageToProfile;
-exports.uploadMultipleImagesToProfile = uploadMultipleImagesToProfile;
 
 
  

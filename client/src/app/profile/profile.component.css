@@ -191,6 +191,8 @@
     font-family: "Aileron Regular";
     font-size: 12px;
     height: 30px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
   }
 }
 @media only screen and (min-width: 768px) {

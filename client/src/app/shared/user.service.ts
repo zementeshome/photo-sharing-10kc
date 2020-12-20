@@ -11,7 +11,7 @@ export class UserService {
   selectedUser: User = {
     username: '',
     email: '',
-    password: ''
+    password: '',
   };
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: User;

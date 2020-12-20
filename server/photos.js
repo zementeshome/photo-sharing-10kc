@@ -11,7 +11,7 @@ const photoSchema = new mongoose.Schema({
     },
     contentType: {
         type: String
-    }
+    },
 })
 
 module.exports = mongoose.model('Photo', photoSchema);

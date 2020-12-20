@@ -38,19 +38,21 @@
         <label class="profile__form-label">upload a photo</label>
         <button type="submit" class="profile__form-exit-button" (click)="closeForm()">x</button>
     </div>
-        <input type="file" class="profile__form-input" name="photo" id="photo" multiple="multiple" (change)="onMultipleFilesChanged($event)">
+        <input type="file" class="profile__form-input" name="photo" id="photo" (change)="onFileChanged($event)">
+        <!-- <input type="file" class="profile__form-input" name="photo" id="photo" multiple="multiple" (change)="onMultipleFilesChanged($event)"> -->
         <!-- <button (click)="fileInput.click()">select file</button> -->
         <label class="profile__form-label">caption:</label>
         <input type="text" class="profile__form-input" name="caption" id="caption" [(ngModel)]="caption">
-        <button type="submit" class="profile__form-button" (click)="onMultipleUpload()">upload</button>
+        <button type="submit" class="profile__form-button" (click)="onUpload()">upload</button>
         <!-- <button type="submit" class="profile__form-button" (click)="closeForm()">close</button> -->
     </form>
 </div>
     <div class="profile__gallery-container">
-        <div class="profile__gallery-image-container">
+        <div class="profile__gallery-image-container" > <!--*ngFor="let image of images" src={{image.imageSrc}}-->
             <img class="profile__gallery-image" [src]="imageSrc" alt="">
+            <!-- <img class="profile__gallery-images" src="" alt=""> -->
             <div class="profile__caption-container">
-            <p class="profile__gallery-username">{{user.username}} •</p>
+            <!-- <p class="profile__gallery-username">{{user.username}} •</p> -->
             <p class="profile__gallery-caption">{{user?.photo?.caption}}</p>
             <button class="profile__gallery-delete" (click)="deleteImage()">x</button>
         </div>

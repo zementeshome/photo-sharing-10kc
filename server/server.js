@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const routerIndex = require('./routes/router');
 require('./db');
-
+const path = require('path')
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -16,6 +16,7 @@ app.use((err, req, res, next) => {
         res.status(422).send(valErrors)
     }
 })
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen('4000', 'localhost');
 console.log("listening on port 4000")

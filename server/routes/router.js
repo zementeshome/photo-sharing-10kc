@@ -16,10 +16,8 @@ const upload = multer({ storage: storage })
 
 router.post('/register', user.register);
 router.post('/login', user.login);
-router.get('/loadimage/:username', user.loadImage)
+router.get('/loadimage/:username', user.loadImage) 
 router.delete('/image/:username', user.deleteImage)
-router.post('/upload/:username', upload.single('photo'), uploadImageToProfile)
-router.post('/uploads/:username', upload.array('files'), uploadMultipleImagesToProfile)
-
+router.post('/upload/:username', upload.single('photo'), uploadImageToProfile);
 
 module.exports = router;

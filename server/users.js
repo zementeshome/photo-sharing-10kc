@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -21,8 +20,7 @@ const userSchema = new mongoose.Schema({
         caption: String,
         data: Buffer,
         contentType: String
-    },
-    saltSecret: String
+    }
 });
 
 // email validation
@@ -32,24 +30,4 @@ userSchema.path('email').validate((val) => {
     return emailRegex.test(val);
 }, 'invalid email')
 
-// username validation
-
-// userSchema.path('username').validate(function(val, res) {
-//     User.findOne({name: val}, 'id', function(err, user) {
-//         if(user)
-//         console.log('user exits')
-//     });
-//   }, "username already exists");
-
-// userSchema.pre('save', (next) => {
-//     bcrypt.genSalt(saltRounds, (err, salt) => {
-//         bcrypt.hash(this.password, salt, (err, hash) =>{
-//             this.password = hash;
-//             this.saltSecret = salt; // not displaying 
-//             next();
-//         });
-//     });
-// });
-
 module.exports = mongoose.model('User', userSchema)
-// module.exports = mongoose.model('Photo', photoSchema)
