@@ -78,10 +78,19 @@
         }
     }
 
-    &__invalid-text {
+    &__invalid-text,
+    &__error {
         @include mobile {
             color: white;
             font-size: 12px;
+        }
+    }
+
+    &__error {
+        @include mobile {
+            font-family: 'Aileron Thin';
+            display: flex;
+            justify-content: center;
         }
     }
 

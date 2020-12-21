@@ -65,7 +65,7 @@ register = (req, res, next) => {
         }
         else
         {
-            if (err.code == 11000 || user) 
+            if (err.code == 11000) 
             res.status(422).send(['this user is already registered'])
             else
             return next(err);
