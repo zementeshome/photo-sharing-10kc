@@ -52,7 +52,6 @@ export class ProfileComponent implements OnInit {
       })
     } 
 
-
     onUpload() {
       const uploadData = new FormData();
       uploadData.append('photo', this.selectedFile);

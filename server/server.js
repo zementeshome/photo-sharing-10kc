@@ -5,7 +5,7 @@ const cors = require('cors');
 const routerIndex = require('./routes/router');
 require('./db');
 const path = require('path')
-
+ 
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', routerIndex);

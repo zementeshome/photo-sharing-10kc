@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './user.model';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,6 @@ export class UserService {
     email: '',
     password: '',
   };
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: User;
 
   constructor(public http: HttpClient, public router: Router) {
