@@ -2,7 +2,6 @@ const Photo = require('./photos');
 const fs = require('fs');
 const User = require('./users');
 
-
 loadImage = async (req, res, next) => {
     let user = await User.findOne({ 'username': req.params.username}).exec();
     if(user) {
@@ -78,7 +77,3 @@ exports.register = register;
 exports.loadImage = loadImage;
 exports.deleteImage = deleteImage;
 exports.uploadImageToProfile = uploadImageToProfile;
-
-
- 
-
