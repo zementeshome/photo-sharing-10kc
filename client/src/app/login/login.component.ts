@@ -20,6 +20,7 @@ constructor(public userService: UserService, public router: Router) {}
   }
 
   loginUser(e) {
+     // if user is true set current user and navigate to home page
     e.preventDefault()
     this.showErrorMessage = false;
     this.userService.login(this.username, this.password).subscribe((user: User) => {

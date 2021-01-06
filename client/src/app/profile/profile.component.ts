@@ -14,7 +14,9 @@ export interface Photo{ data: string; contentType: string ; caption:string;}
 export class ProfileComponent implements OnInit {
   faSmile = faSmile
   user: { username: string, email: string, photo: Photo};
-  selectedFile: File
+  selectedFile: File;
+  // array
+  // selectedFile: [];
   imageSrc = '';
   caption='';
 
@@ -29,6 +31,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+     // get user
     this.user = JSON.parse(localStorage.getItem('user'));
     if(this.user?.photo) {
       const { photo } = this.user;
@@ -38,14 +41,19 @@ export class ProfileComponent implements OnInit {
   }
 
     constructImageSrc = (photo) => {
+       // saves the content type and the image data 
+      // imageSrc variable in the image tag in profile html
       return `data:${photo?.contentType};base64,${photo?.data}`
     }
 
     onFileChanged(event) {
-      this.selectedFile = event.target.files[0]
+          // whenever an image is selected it gets saved in this variable
+      this.selectedFile = event.target.files[0];
+      // array
+      // this.selectedFile = event.target.files;
     }
 
-    deleteImage = ()=>{
+    deleteImage = () => {
       this.http.delete(`http://localhost:4000/api/image/${this.user.username}`).subscribe(success=>{
         this.imageSrc = '';
         this.caption = '';
@@ -53,9 +61,18 @@ export class ProfileComponent implements OnInit {
     } 
 
     onUpload() {
+       // on upload form data is created
+      // then adding an image and getting the selected file
+      // calling the api with the current user username, with the uploadData
+      // once the image has been uploaded call the load image api
       const uploadData = new FormData();
       uploadData.append('photo', this.selectedFile);
-      uploadData.append('caption', this.caption );
+      uploadData.append('caption', this.caption);
+      // array 
+      // for (let file of this.selectedFile) {
+      //   uploadData.append('photo', file);
+      //   uploadData.append('caption', this.caption);
+      // }
       this.http.post(`http://localhost:4000/api/upload/${this.user.username}`, uploadData)
         .subscribe(success => {
           if (success) {

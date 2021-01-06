@@ -29,6 +29,8 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+      // if dats from form is true, post user to database, rest form, save the user data in local storage, then navigate to home page
+      // if(form.valid === true)
     if(form.valid === true)
     this.userService.postUser(form.value).subscribe(
       res => {
