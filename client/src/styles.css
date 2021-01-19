@@ -1,5 +1,6 @@
 body {
   background: #3f5efb;
-  background: -webkit-gradient(linear, left top, right top, from(#3f5efb), to(#fc466b));
-  background: linear-gradient(90deg, #3f5efb 0%, #fc466b 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, #b88beb), to(#f08bd6));
+  background: linear-gradient(90deg, #b88beb 20%, #f08bd6 100%);
 }
+/*# sourceMappingURL=styles.css.map */

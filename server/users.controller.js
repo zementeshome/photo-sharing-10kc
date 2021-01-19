@@ -58,20 +58,20 @@ uploadImageToProfile = async (req, res, next) => {
     // multer docs memory storage
     let file = req.file
     let user = await User.findOne({ 'username': req.params.username }).exec();
-    if(user){
-        console.log(__dirname+'/'+file.path);
-        let data = fs.readFileSync( __dirname+'/'+file.path);
-        console.log('file read')
-        user.photo = {
-            caption: req.body.caption,
-            data: data,
-            contentType: file.mimetype
-        };
-        let result = await user.save();
-        console.log(result)
-        res.json(true)
-     }
-  }
+        if(user) {
+            console.log(__dirname+'/'+file.path);
+            let data = fs.readFileSync( __dirname+'/'+file.path);
+            console.log('file read')
+            user.photo = {
+                caption: req.body.caption,
+                data: data,
+                contentType: file.mimetype
+            };
+            let result = await user.save();
+            console.log(result)
+            res.json(true)
+         }
+    }
 
 register = (req, res, next) => {
     const user = new User();

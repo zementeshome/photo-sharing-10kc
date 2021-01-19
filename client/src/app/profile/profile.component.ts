@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   user: { username: string, email: string, photo: Photo};
   selectedFile: File;
   // array
-  // selectedFile: [];
+  // selectedFiles: [];
   imageSrc = '';
   caption='';
 
@@ -48,9 +48,9 @@ export class ProfileComponent implements OnInit {
 
     onFileChanged(event) {
           // whenever an image is selected it gets saved in this variable
-      this.selectedFile = event.target.files[0];
+      // this.selectedFile = event.target.files[0];
       // array
-      // this.selectedFile = event.target.files;
+      this.selectedFile = event.target.files[0];
     }
 
     deleteImage = () => {

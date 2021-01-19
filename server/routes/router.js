@@ -20,7 +20,7 @@ router.post('/register', user.register);
 router.post('/login', user.login);
 router.get('/loadimage/:username', user.loadImage) 
 router.delete('/image/:username', user.deleteImage)
-router.post('/upload/:username', upload.single('photo'), uploadImageToProfile);
+router.post('/upload/:username', upload.single('photo', 10), uploadImageToProfile);
 // upload array
 // router.post('/upload/:username', upload.array('photo'. 12), uploadImageToProfile);
 // uploiad.single('photo') creates an image file and saves it in public/images

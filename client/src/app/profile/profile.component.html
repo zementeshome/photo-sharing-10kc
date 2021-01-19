@@ -31,11 +31,11 @@
     <label class="profile__form-label">upload a photo</label>
     <button type="submit" class="profile__form-exit-button" (click)="closeForm()">x</button>
 </div>
-    <input type="file" class="profile__form-input" name="photo" id="photo" (change)="onFileChanged($event)">
-    <!-- upload array 
-    <input type="file" class="profile__form-input" name="photo" id="photo" (change)="onFileChanged($event)" #fileInput multiple>  -->
+    <!-- <input type="file" class="profile__form-input" name="photo" id="photo" (change)="onFileChanged($event)"> -->
+    <input type="file" class="profile__form-input" name="photo" id="photo" (change)="onFileChanged($event)"  accept='image/*' #fileInput multiple>
+    <!-- <input type="submit" value="photo_upload"> -->
     <label class="profile__form-label">caption:</label>
-    <input type="text" class="profile__form-input" name="caption" id="caption" [(ngModel)]="caption">
+    <input #gallery type="text" class="profile__form-input" name="caption" id="caption" [(ngModel)]="caption">
     <button type="submit" class="profile__form-button" (click)="onUpload()">upload</button>
     </form>
 </div>
